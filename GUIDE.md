@@ -275,8 +275,8 @@ Features added after the original plan (all implemented and verified):
   kept. `app.setName('Novelty')` keeps the userData path consistent in dev and
   packaged builds.
 - **Import merge/replace** (`modals/ImportModal`): importing a vault JSON now
-  asks whether to *merge* (upsert notes/folders/images by id, keep current
-  settings and vault name) or *replace* (wipe and load). A backup is taken first.
+  asks whether to _merge_ (upsert notes/folders/images by id, keep current
+  settings and vault name) or _replace_ (wipe and load). A backup is taken first.
 - **Lazy-loaded editor**: CodeMirror and the markdown/preview pipeline are split
   into on-demand chunks (`Loadable` + `React.lazy`), keeping the startup bundle
   small. `highlight.js/lib/common` is used instead of all languages.

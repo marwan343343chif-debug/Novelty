@@ -73,9 +73,7 @@ export function WebSearchPane(): JSX.Element {
       <div className="web-body">
         {error ? (
           <div className="web-error" role="alert">
-            <span className="web-error-icon">
-              {!online ? <CloudOff size={16} /> : <Search size={16} />}
-            </span>
+            <span className="web-error-icon">{!online ? <CloudOff size={16} /> : <Search size={16} />}</span>
             <div className="web-error-text">
               <span className="web-error-title">{!online ? 'You are offline' : 'Search failed'}</span>
               <span className="web-error-message">{!online ? 'Connect to the internet and try again.' : error}</span>

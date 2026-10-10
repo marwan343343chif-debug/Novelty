@@ -286,9 +286,9 @@ async function webSearch(rawQuery: string): Promise<{
   const ddgUrl = `https://api.duckduckgo.com/?q=${enc}&format=json&no_html=1&skip_disambig=1&t=novelty`
 
   const [wikiSettled, ddgSettled] = await Promise.allSettled([fetchJson(wikiUrl), fetchJson(ddgUrl)])
-  const rejections: unknown[] = [ddgSettled, wikiSettled].filter(
-    (s): s is PromiseRejectedResult => s.status === 'rejected',
-  ).map((s) => (s as PromiseRejectedResult).reason)
+  const rejections: unknown[] = [ddgSettled, wikiSettled]
+    .filter((s): s is PromiseRejectedResult => s.status === 'rejected')
+    .map((s) => (s as PromiseRejectedResult).reason)
 
   let summary: WebSearchSummary | null = null
   const results: WebSearchResult[] = []

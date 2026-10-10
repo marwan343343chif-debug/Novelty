@@ -1,5 +1,7 @@
 # Novelty
 
+[![CI](https://github.com/marwan343343chif-debug/Novelty/actions/workflows/ci.yml/badge.svg)](https://github.com/marwan343343chif-debug/Novelty/actions/workflows/ci.yml)
+
 > A premium markdown studio for chapters, notes, and everything in between.
 
 Novelty is a local-first desktop writing app for markdown and plain text. It
@@ -27,8 +29,9 @@ the searches you explicitly run in the Web search panel.
   text result list, without leaving your notes.
 - **Images** — paste/upload images, set note covers, and export notes with an
   `assets/` folder.
-- **Data** — auto-save, export a note as `.md`, export the whole vault as JSON,
-  export every note as Markdown, and import a vault.
+- **Data** — auto-save, automatic rotating backups, export a note as `.md`,
+  export the whole vault as JSON, export every note as Markdown, and import a
+  vault (merge or replace).
 - **Themes** — OpenCode Dark, Graphite, and Paper, with an accent picker,
   density, content width, and font controls.
 
@@ -61,6 +64,19 @@ npm run dist        # package installers into release/
 
 App icons live in `build/` (`icon.png`, `icon.ico`, `icon.icns`, and
 `build/icons/`).
+
+## Data & backups
+
+Your vault is stored locally in IndexedDB. On every launch — and before any
+destructive action such as replacing the vault on import or erasing all data —
+Novelty writes a rotating JSON backup to the app's user-data directory
+(`<userData>/backups/novelty-<timestamp>.json`, newest 20 kept). To restore one,
+open **Settings → Data → Import vault JSON** and pick the backup file, then
+choose **Merge** or **Replace**.
+
+On Linux the user-data directory is `~/.config/Novelty`, on macOS
+`~/Library/Application Support/Novelty`, and on Windows
+`%APPDATA%\Novelty`.
 
 ## Keyboard shortcuts
 

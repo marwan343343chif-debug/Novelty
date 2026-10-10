@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "A premium markdown studio for chapters, notes, and everything in between.",
   "main": "./out/main/index.js",
-  "homepage": "https://example.com/novelty",
+  "homepage": "https://github.com/marwan343343chif-debug/Novelty",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marwan343343chif-debug/Novelty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marwan343343chif-debug/Novelty/issues"
+  },
   "author": {
     "name": "Sartre"
   },

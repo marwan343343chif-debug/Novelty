@@ -20,7 +20,7 @@ linux:
   #   npx electron-builder --linux deb
   target:
     - AppImage
-  maintainer: Sartre <sartre@example.com>
+  maintainer: Sartre <marwan343343chif-debug@users.noreply.github.com>
   category: Office
   icon: build/icons
   synopsis: A premium markdown studio for chapters, notes, and everything in between.

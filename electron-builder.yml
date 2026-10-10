@@ -1,0 +1,54 @@
+appId: com.novelty.app
+productName: Novelty
+copyright: Copyright © 2026 Sartre
+
+directories:
+  buildResources: build
+  output: release
+
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+
+asar: true
+compression: normal
+npmRebuild: false
+
+linux:
+  # Default target is AppImage (works everywhere). A .deb is also supported:
+  #   npx electron-builder --linux deb
+  target:
+    - AppImage
+  maintainer: Sartre <sartre@example.com>
+  category: Office
+  icon: build/icons
+  synopsis: A premium markdown studio for chapters, notes, and everything in between.
+  description: >
+    Novelty is a local-first desktop markdown and plain-text studio with an
+    Obsidian-style layout: linked notes, folders, tags, backlinks, a local
+    graph, writing widgets, and a quick web-search panel. Your vault lives in
+    IndexedDB on your machine, with import/export to disk.
+  desktop:
+    entry:
+      StartupWMClass: Novelty
+
+mac:
+  target:
+    - dmg
+  category: public.app-category.productivity
+  icon: build/icon.icns
+  darkModeSupport: true
+
+win:
+  target:
+    - nsis
+  icon: build/icon.ico
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Novelty

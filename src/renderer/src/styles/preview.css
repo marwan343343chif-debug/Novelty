@@ -1,0 +1,338 @@
+.markdown-body {
+  color: var(--text);
+  font-size: var(--preview-font-size, 15px);
+  line-height: 1.72;
+  word-wrap: break-word;
+}
+.markdown-body > *:first-child {
+  margin-top: 0;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin: 1.6em 0 0.6em;
+  line-height: 1.3;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  scroll-margin-top: 20px;
+}
+.markdown-body h1 {
+  font-size: 1.9em;
+  margin-top: 0.4em;
+}
+.markdown-body h1::after {
+  content: '';
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+.markdown-body h2 {
+  font-size: 1.5em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--border);
+}
+.markdown-body h3 {
+  font-size: 1.26em;
+}
+.markdown-body h4 {
+  font-size: 1.1em;
+}
+.markdown-body h5,
+.markdown-body h6 {
+  font-size: 1em;
+  color: var(--text-muted);
+}
+.markdown-body p {
+  margin: 0.85em 0;
+}
+.markdown-body a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur);
+}
+.markdown-body a:hover {
+  border-bottom-color: var(--accent-line);
+}
+.markdown-body strong {
+  font-weight: 680;
+  color: color-mix(in srgb, var(--text) 92%, var(--accent));
+}
+.markdown-body em {
+  font-style: italic;
+}
+.markdown-body del {
+  color: var(--text-faint);
+}
+.markdown-body mark {
+  background: linear-gradient(transparent 55%, var(--accent-soft) 55%);
+  color: var(--text);
+  padding: 0 1px;
+  border-radius: 2px;
+}
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0.8em 0;
+  padding-left: 1.5em;
+}
+.markdown-body li {
+  margin: 0.3em 0;
+}
+.markdown-body li::marker {
+  color: var(--accent);
+}
+.markdown-body input[type='checkbox'] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+  vertical-align: -2px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 4px;
+  background: var(--bg-input);
+  cursor: pointer;
+  position: relative;
+  transition:
+    background var(--dur),
+    border-color var(--dur);
+}
+.markdown-body input[type='checkbox']:hover {
+  border-color: var(--accent-line);
+}
+.markdown-body input[type='checkbox']:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.markdown-body input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #10130f;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.markdown-body li:has(> input[type='checkbox']) {
+  list-style: none;
+  margin-left: -1.3em;
+}
+.markdown-body blockquote {
+  margin: 1em 0;
+  padding: 0.2em 1em;
+  border-left: 3px solid var(--border-strong);
+  color: var(--text-muted);
+}
+.markdown-body hr {
+  border: none;
+  height: 1px;
+  margin: 2em 0;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  padding: 0.15em 0.42em;
+  border-radius: 5px;
+  background: var(--code-bg);
+  border: 1px solid var(--border-soft);
+  color: color-mix(in srgb, var(--accent) 60%, var(--text));
+}
+.markdown-body pre {
+  margin: 1.1em 0;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  position: relative;
+}
+.markdown-body pre code {
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 0.86em;
+  color: var(--text);
+  line-height: 1.6;
+}
+.markdown-body pre[data-lang]::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.markdown-body table {
+  width: 100%;
+  margin: 1.2em 0;
+  border-collapse: collapse;
+  font-size: 0.92em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.markdown-body th,
+.markdown-body td {
+  padding: 9px 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-soft);
+}
+.markdown-body th {
+  background: var(--bg-panel);
+  color: var(--text);
+  font-weight: 600;
+}
+.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+.markdown-body tr:hover td {
+  background: var(--bg-hover);
+}
+.markdown-body img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* wiki links + tags */
+.markdown-body .wiki-link {
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent-line);
+  padding-bottom: 1px;
+}
+.markdown-body .wiki-link::before {
+  content: '↗';
+  font-size: 0.75em;
+  margin-right: 3px;
+  opacity: 0.7;
+}
+.markdown-body .wiki-link.wiki-missing {
+  color: var(--text-faint);
+  border-bottom-style: dotted;
+}
+.markdown-body .tag-pill {
+  display: inline-block;
+  padding: 1px 8px;
+  margin: 0 1px;
+  border-radius: 999px;
+  background: var(--bg-active);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.82em;
+  font-family: var(--font-mono);
+  border-bottom: none;
+}
+.markdown-body .tag-pill:hover {
+  border-color: var(--accent-line);
+}
+
+/* callouts */
+.markdown-body .callout {
+  margin: 1.1em 0;
+  padding: 13px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  background: var(--bg-panel);
+}
+.markdown-body .callout > p:first-of-type,
+.markdown-body .callout .callout-title + p {
+  margin-top: 0;
+}
+.markdown-body .callout > *:last-child {
+  margin-bottom: 0;
+}
+.markdown-body .callout-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 620;
+  font-size: 0.95em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.markdown-body .callout-icon {
+  display: grid;
+  place-items: center;
+}
+.markdown-body .callout-note,
+.markdown-body .callout-info {
+  border-left-color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 8%, var(--bg-panel));
+}
+.markdown-body .callout-note .callout-icon,
+.markdown-body .callout-info .callout-icon {
+  color: var(--blue);
+}
+.markdown-body .callout-tip,
+.markdown-body .callout-hint,
+.markdown-body .callout-success,
+.markdown-body .callout-check,
+.markdown-body .callout-done {
+  border-left-color: var(--green);
+  background: color-mix(in srgb, var(--green) 8%, var(--bg-panel));
+}
+.markdown-body .callout-tip .callout-icon,
+.markdown-body .callout-hint .callout-icon,
+.markdown-body .callout-success .callout-icon {
+  color: var(--green);
+}
+.markdown-body .callout-warning,
+.markdown-body .callout-caution {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-panel));
+}
+.markdown-body .callout-warning .callout-icon,
+.markdown-body .callout-caution .callout-icon {
+  color: var(--accent);
+}
+.markdown-body .callout-danger,
+.markdown-body .callout-error,
+.markdown-body .callout-failure,
+.markdown-body .callout-bug,
+.markdown-body .callout-fail,
+.markdown-body .callout-missing {
+  border-left-color: var(--red);
+  background: color-mix(in srgb, var(--red) 8%, var(--bg-panel));
+}
+.markdown-body .callout-danger .callout-icon,
+.markdown-body .callout-error .callout-icon,
+.markdown-body .callout-failure .callout-icon {
+  color: var(--red);
+}
+.markdown-body .callout-quote,
+.markdown-body .callout-cite {
+  border-left-color: var(--purple);
+  background: color-mix(in srgb, var(--purple) 8%, var(--bg-panel));
+}
+.markdown-body .callout-quote .callout-icon,
+.markdown-body .callout-cite .callout-icon {
+  color: var(--purple);
+}
+.markdown-body .callout-example,
+.markdown-body .callout-question,
+.markdown-body .callout-faq,
+.markdown-body .callout-todo,
+.markdown-body .callout-abstract,
+.markdown-body .callout-summary,
+.markdown-body .callout-tldr {
+  border-left-color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 8%, var(--bg-panel));
+}
+.markdown-body .callout-example .callout-icon,
+.markdown-body .callout-question .callout-icon,
+.markdown-body .callout-todo .callout-icon,
+.markdown-body .callout-abstract .callout-icon {
+  color: var(--teal);
+}
